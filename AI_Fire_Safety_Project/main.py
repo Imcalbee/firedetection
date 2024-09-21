@@ -88,24 +88,21 @@ def visualize(image, boxes, label_key, scores, labels):
     return image
 
 # Streamlit App
-st.title("OpenVINO Object Detection with Streamlit")
+st.set_page_config(
+    page_title="Openvino Mutlimodal Demo: Age/Gender/Emotion",
+    page_icon=":sun_with_face:",
+    layout="wide")
 
-# Upload model and image
-model_file = st.file_uploader("Upload OpenVINO model (.xml)", type=["xml"])
-metadata_file = st.file_uploader("Upload Metadata (.yaml)", type=["yaml"])
-image_file = st.file_uploader("Upload Image", type=["jpg", "jpeg", "png"])
+st.title("Openvino Mutlimodal Demo: Age/Gender/Emotion :sun_with_face:")
+st.markdown('### Using three models: \n 1. face-detection-adas-0001 \n 2. emotions-recognition-retail-0003 \n 3. age-gender-recognition-retail-0013')
 
-if model_file and metadata_file and image_file:
-    with st.spinner("Loading model and metadata..."):
-        compiled_model, input_layer, output_layer = load_model(model_file)
-        labels = load_metadata(metadata_file)
+input = None 
+conf_threshold = float(20)/100 # confidence in float => 20% = 0.2
 
-    image = np.array(cv2.imdecode(np.frombuffer(image_file.read(), np.uint8), 1))
+image = camera_input_live()
 
-    conf_threshold = st.slider("Confidence Threshold", 0.0, 1.0, 0.4)
+uploaded_image = PIL.Image.open(image)
+uploaded_image_cv = cv2.cvtColor(numpy.array(uploaded_image), cv2.COLOR_RGB2BGR)
+visualized_image = utils.predict_image(uploaded_image_cv, conf_threshold = conf_threshold)
 
-    # Predict and visualize
-    boxes, scores, label_key = predict_image(image, compiled_model, input_layer, output_layer, conf_threshold)
-    output_image = visualize(image, boxes, label_key, scores, labels)
-
-    st.image(output_image, caption="Processed Image", use_column_width=True)
+st.image(visualized_image, channels = "BGR")
