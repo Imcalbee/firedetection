@@ -30,7 +30,7 @@ output_layer = compiled_model.output(0)
 print("Input Layer shape:", input_layer.shape)
 print("Output Layer shape:", output_layer.shape)
 
-with open('models/metadata.yaml') as info:
+with open('AI_Fire_Safety_Project/models/metadata.yaml') as info:
     info_dict = yaml.load(info, Loader=yaml.Loader)
 
 labels = info_dict['names']
