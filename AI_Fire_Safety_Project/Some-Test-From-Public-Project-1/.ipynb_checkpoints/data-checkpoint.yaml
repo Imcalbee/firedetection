@@ -1,0 +1,20 @@
+names: 
+- fire
+- smoke
+
+nc: 2
+
+
+roboflow:
+  workspace: fire-smoke-od
+  project: some-tests
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/fire-smoke-od/some-tests/dataset/1
+
+
+path: C:\AI_Fire_Safety_Project\Some-Test-From-Public-Project-1
+train: train/images
+val: valid/images
+test: test/images
+
