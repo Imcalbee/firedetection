@@ -1,6 +1,7 @@
 streamlit
 openvino
 opencv-python-headless == 4.10.0.82
+ipywidgets
 pyyaml
 ultralytics
 numpy
