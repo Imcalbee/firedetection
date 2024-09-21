@@ -2,7 +2,7 @@ streamlit
 tornado==6.3.2
 openvino
 opencv-python-headless == 4.10.0.82
-opencv == 4.9.0.80
+opencv == 4.7.0.68
 pyyaml
 ultralytics
 numpy
