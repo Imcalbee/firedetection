@@ -1,6 +1,6 @@
 streamlit==1.38.0
 openvino==2024.4.0
-opencv-python-headless==4.10.0.82
+opencv-python-headless==4.5.3.56
+numpy==1.23.0
 ipywidgets
-numpy
 pyyaml
