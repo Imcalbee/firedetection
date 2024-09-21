@@ -266,7 +266,7 @@ def predict_image(image, conf_threshold):
         return image, inference_time
     
     
-image = cv2.imread("images/test.jpg")
+image = cv2.imread("AI_Fire_Safety_Project/images/test.jpg")
 conf_threshold = .15
 output_image,inference_time = predict_image(image, conf_threshold)
 
