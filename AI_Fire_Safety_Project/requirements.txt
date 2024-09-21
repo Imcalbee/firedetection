@@ -5,4 +5,4 @@ opencv-python-headless == 4.10.0.82
 pyyaml
 ultralytics
 numpy
-python==3.10.0
+python>=3.7,<=3.11
