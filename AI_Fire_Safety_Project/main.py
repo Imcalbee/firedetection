@@ -22,7 +22,7 @@ device = widgets.Dropdown(
 
 device
 
-model = core.read_model(model="models/best.xml")
+model = core.read_model(model="AI_Fire_Safety_Project/models/best.xml")
 compiled_model = core.compile_model(model = model, device_name = device.value)
 
 input_layer = compiled_model.input(0)
