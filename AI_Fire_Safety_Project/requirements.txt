@@ -1,5 +1,6 @@
 streamlit
 openvino
+opencv
 opencv-python-headless
 pyyaml
 ultralytics
