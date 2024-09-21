@@ -107,7 +107,7 @@ def prepare_data(image, input_layer):
 
     return input_image
 
-image = cv2.imread("images/test.jpg")
+image = cv2.imread("AI_Fire_Safety_Project/images/test.jpg")
 input_image = prepare_data(image, input_layer)
 print(np.shape(input_image))
 
