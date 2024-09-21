@@ -1,8 +1,6 @@
-streamlit
-openvino
-opencv-python-headless == 4.10.0.82
-opencv-python
+streamlit==1.38.0
+openvino==2024.4.0
+opencv-python-headless==4.10.0.82
 ipywidgets
-pyyaml
-ultralytics
 numpy
+pyyaml
