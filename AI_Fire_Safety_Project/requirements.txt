@@ -4,5 +4,3 @@ opencv-python-headless
 pyyaml
 ultralytics
 numpy
-pyyaml
-ultralytics
